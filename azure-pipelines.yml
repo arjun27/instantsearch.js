@@ -16,3 +16,9 @@ steps:
     yarn install
     yarn run build
   displayName: 'npm install and build'
+
+- task: RichCodeNavIndexer@0
+  inputs:
+    serviceConnection: 'rich-code-nav-prod'
+    githubServiceConnection: 'arjun27 (3)'
+    languages: typescript
