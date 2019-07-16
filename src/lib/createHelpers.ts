@@ -1,3 +1,4 @@
+//
 import {
   highlight,
   snippet,
@@ -5,14 +6,17 @@ import {
   SnippetOptions,
 } from '../helpers';
 
+//
 type HoganRenderer = (value: any) => string;
 
+//
 interface HoganHelpers {
   formatNumber: (value: number, render: HoganRenderer) => string;
   highlight: (options: string, render: HoganRenderer) => string;
   snippet: (options: string, render: HoganRenderer) => string;
 }
 
+//
 export default function hoganHelpers({
   numberLocale,
 }: {
