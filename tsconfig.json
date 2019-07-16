@@ -15,9 +15,7 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": true,
-    "outDir": ".",
-    "rootDir": "src"
+    "allowSyntheticDefaultImports": true
   },
   "exclude": ["examples"]
 }
