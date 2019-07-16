@@ -13,7 +13,10 @@ steps:
   displayName: 'Install Node.js'
   
 - script: |
-    jq
+    npm i -g strip-json-comments-cli
+
+- script: |
+    strip-json-comments tsconfig.json | jq '.compilerOptions["rootDir"] = "src"' | jq '.compilerOptions["outDir"] = "src"'
 
 - script: |
     yarn install
