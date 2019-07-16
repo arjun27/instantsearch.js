@@ -21,7 +21,7 @@ steps:
     npm i -g strip-json-comments-cli
 
 - script: |
-    strip-json-comments tsconfig.json | jq ".compilerOptions[\"rootDir\"] = \"src\"" | jq ".compilerOptions[\"outDir\"] = \"src\"" > tsconfig.json
+    strip-json-comments tsconfig.json | jq ".compilerOptions[\"rootDir\"] = \"src\"" | jq ".compilerOptions[\"outDir\"] = \"src\""
 
 - script: |
     type tsconfig.json
