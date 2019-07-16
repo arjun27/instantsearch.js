@@ -12,21 +12,11 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
   
-- script: |
-    type tsconfig.json
-  
-# The next two steps are to handle missing rootDir and outDir in the tsconfig.json
+# The next step is to handle missing rootDir and outDir in the tsconfig.json
 # These can be removed once we fix support in the build task.
 - script: |
     npm i -g strip-json-comments-cli
-
-- script: |
     strip-json-comments tsconfig.json | jq ".compilerOptions[\"rootDir\"] = \"src\"" | jq ".compilerOptions[\"outDir\"] = \"src\"" > tsconfig.temp.json
-
-- script: |
-    type tsconfig.temp.json
-    
-- script: |
     del tsconfig.json
     rename tsconfig.temp.json tsconfig.json
 
